@@ -12,6 +12,7 @@ func _ready() -> void:
 	area.body_entered.connect(_on_body_entered)
 
 func _on_area_entered(area: Area2D) -> void:
+	# TODO: add broad-phase (large circle) + fine-phase (tight convex polygon) two-stage collision
 	print("Player hit by area: ", area.name)
 
 func _on_body_entered(body: Node) -> void:
