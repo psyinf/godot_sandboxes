@@ -2,8 +2,13 @@
 
 [ext_resource type="Script" uid="uid://d24km7w8s7lgd" path="res://camera_2d.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://xqwf8vxs5sk7" path="res://assets/seamless-starfield-texture.jpg" id="2_0xm2m"]
+[ext_resource type="Shader" uid="uid://casmatit80n75" path="res://main.gdshader" id="2_7mycd"]
 [ext_resource type="Texture2D" uid="uid://fkehqsb0kgf5" path="res://assets/playerShip1_blue.png" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://bw0qbj5yqsfg" path="res://player.gd" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bwseatqb7akm6" path="res://background.gd" id="4_272bh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
+shader = ExtResource("2_7mycd")
 
 [node name="Node2D" type="Node2D" unique_id=418820523]
 
@@ -11,11 +16,14 @@
 script = ExtResource("1_0xm2m")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=127309238]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_5vw27")
 offset_left = -952.0
 offset_top = -960.0
 offset_right = 968.0
 offset_bottom = 960.0
 texture = ExtResource("2_0xm2m")
+script = ExtResource("4_272bh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1326627517]
 texture = ExtResource("3_h2yge")
