@@ -1,8 +1,9 @@
-[gd_scene format=3 uid="uid://bcgvbqsk553ee"]
+[gd_scene format=3 uid="uid://r0d1esr032bx"]
 
 [ext_resource type="Script" uid="uid://d24km7w8s7lgd" path="res://camera_2d.gd" id="1_0xm2m"]
 [ext_resource type="Shader" uid="uid://casmatit80n75" path="res://main.gdshader" id="2_7mycd"]
 [ext_resource type="Texture2D" uid="uid://63xd1g8usbnp" path="res://assets/background/seamless-starfield-texture.jpg" id="3_7mycd"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="4_0m0m1"]
 [ext_resource type="Script" uid="uid://bw0qbj5yqsfg" path="res://player.gd" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://bwseatqb7akm6" path="res://background.gd" id="4_272bh"]
 [ext_resource type="Texture2D" uid="uid://b4ae76vjlyise" path="res://assets/player/playerShip1_blue.png" id="5_272bh"]
@@ -11,6 +12,7 @@
 shader = ExtResource("2_7mycd")
 
 [node name="Node2D" type="Node2D" unique_id=418820523]
+script = ExtResource("4_0m0m1")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1050316441]
 script = ExtResource("1_0xm2m")

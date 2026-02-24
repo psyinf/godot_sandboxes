@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xqwf8vxs5sk7"
-path="res://.godot/imported/seamless-starfield-texture.jpg-06f9ef53f7acd5ec9fbe1b258026c117.ctex"
+uid="uid://b0uaokqnwpmeg"
+path="res://.godot/imported/meteorBrown_small2.png-1a721bce3667bcb76ceea8c31f74109d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/seamless-starfield-texture.jpg"
-dest_files=["res://.godot/imported/seamless-starfield-texture.jpg-06f9ef53f7acd5ec9fbe1b258026c117.ctex"]
+source_file="res://assets/meteors/meteorBrown_small2.png"
+dest_files=["res://.godot/imported/meteorBrown_small2.png-1a721bce3667bcb76ceea8c31f74109d.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fkehqsb0kgf5"
-path="res://.godot/imported/playerShip1_blue.png-781545b5574b1ca3ebab9db6c0cd6317.ctex"
+uid="uid://dtljoc7fbjywm"
+path="res://.godot/imported/meteorGrey_big3.png-bf3169c666fc16214620c9aa392496dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/playerShip1_blue.png"
-dest_files=["res://.godot/imported/playerShip1_blue.png-781545b5574b1ca3ebab9db6c0cd6317.ctex"]
+source_file="res://assets/meteors/meteorGrey_big3.png"
+dest_files=["res://.godot/imported/meteorGrey_big3.png-bf3169c666fc16214620c9aa392496dc.ctex"]
 
 [params]
 

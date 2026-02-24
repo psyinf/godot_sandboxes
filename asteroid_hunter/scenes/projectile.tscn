@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://jphpaijp7oy"]
+
+[ext_resource type="Script" path="res://scenes/projectile.gd" id="1_k4r17"]
+[ext_resource type="Texture2D" path="res://assets/weapons/laserBlue01.png" id="2_0wx0x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8o7l"]
+size = Vector2(12, 36)
+
+[node name="Projectile" type="Area2D"]
+script = ExtResource("1_k4r17")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_0wx0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_q8o7l")
