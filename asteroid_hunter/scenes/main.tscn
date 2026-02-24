@@ -11,6 +11,9 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
 shader = ExtResource("2_7mycd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(80, 60)
+
 [node name="Node2D" type="Node2D" unique_id=418820523]
 script = ExtResource("4_0m0m1")
 
@@ -32,3 +35,8 @@ texture = ExtResource("5_272bh")
 script = ExtResource("4_1bvp3")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=800716848]
+collision_layer = 1
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D"]
+shape = SubResource("RectangleShape2D_player")

@@ -7,7 +7,15 @@ var fire_timer: float = 0.0
 var projectile_scene: PackedScene = preload("res://scenes/projectile.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	var area = $Area2D
+	area.area_entered.connect(_on_area_entered)
+	area.body_entered.connect(_on_body_entered)
+
+func _on_area_entered(area: Area2D) -> void:
+	print("Player hit by area: ", area.name)
+
+func _on_body_entered(body: Node) -> void:
+	print("Player hit by body: ", body.name)
 
 func _clampToScreen() -> void:
 	var half_size = texture.get_size() / 2
