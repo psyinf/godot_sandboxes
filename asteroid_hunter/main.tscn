@@ -10,6 +10,10 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
 shader = ExtResource("2_7mycd")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7mycd"]
+radius = 51.0
+height = 102.0
+
 [node name="Node2D" type="Node2D" unique_id=418820523]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1050316441]
@@ -18,10 +22,10 @@ script = ExtResource("1_0xm2m")
 [node name="TextureRect" type="TextureRect" parent="." unique_id=127309238]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_5vw27")
-offset_left = -952.0
-offset_top = -960.0
-offset_right = 968.0
-offset_bottom = 960.0
+offset_left = -953.0
+offset_top = -961.0
+offset_right = 967.0
+offset_bottom = 959.0
 texture = ExtResource("3_7mycd")
 script = ExtResource("4_272bh")
 
@@ -30,3 +34,6 @@ texture = ExtResource("5_272bh")
 script = ExtResource("4_1bvp3")
 
 [node name="Area2D" type="Area2D" parent="Player" unique_id=800716848]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/Area2D" unique_id=1700373579]
+shape = SubResource("CapsuleShape2D_7mycd")

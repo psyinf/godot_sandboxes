@@ -5,8 +5,12 @@ const FIRE_COOLDOWN: float = 0.15
 
 var fire_timer: float = 0.0
 var projectile_scene: PackedScene = preload("res://scenes/projectile.tscn")
+var _velocity: Vector2 = Vector2.ZERO
+const ACCELERATION: float = 14.0  # ramp-up rate when key is held
+const DAMPING: float = 10.0       # ramp-down rate when key is released
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.use_accumulated_input = false
 	var area = $Area2D
 	area.area_entered.connect(_on_area_entered)
 	area.body_entered.connect(_on_body_entered)
@@ -25,15 +29,13 @@ func _clampToScreen() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#process inputs
-	if Input.is_action_pressed("player_right"):	
-		position.x += SPEED * delta
-	if Input.is_action_pressed("player_left"):
-		position.x -= SPEED * delta	
-	if Input.is_action_pressed("player_down"):
-		position.y += SPEED * delta
-	if Input.is_action_pressed("player_up"):
-		position.y -= SPEED * delta
+	var raw_input := Input.get_vector("player_left", "player_right", "player_up", "player_down")
+	# 1. always damp toward zero first
+	_velocity = _velocity.slerp(Vector2.ZERO, DAMPING * delta)
+	# 2. then drive toward target speed from input
+	if raw_input.length_squared() > 0.0:
+		_velocity = _velocity.lerp(raw_input * SPEED, ACCELERATION * delta)
+	position += _velocity * delta
 	
 	# Restrict movement to scene bounds
 	_clampToScreen();
