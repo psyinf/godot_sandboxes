@@ -8,6 +8,7 @@ var projectile_scene: PackedScene = preload("res://scenes/projectile.tscn")
 var _velocity: Vector2 = Vector2.ZERO
 const ACCELERATION: float = 14.0  # ramp-up rate when key is held
 const DAMPING: float = 10.0       # ramp-down rate when key is released
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Input.use_accumulated_input = false

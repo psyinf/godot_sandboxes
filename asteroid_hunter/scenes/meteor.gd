@@ -7,6 +7,8 @@ var direction: Vector2 = Vector2.DOWN
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
 
+const EXPLOSION_SCENE: PackedScene = preload("res://explosion.tscn")
+
 func configure(spawn_position: Vector2, spawn_direction: Vector2, new_speed: float, new_rotation_speed: float) -> void:
 	global_position = spawn_position
 	direction = spawn_direction.normalized()
@@ -29,7 +31,14 @@ func _process(delta: float) -> void:
 	rotation += rotation_speed * delta
 
 func _on_body_entered(_body: Node) -> void:
+	_spawn_explosion()
 	queue_free()
 
 func _on_area_entered(_area: Area2D) -> void:
+	_spawn_explosion()
 	queue_free()
+
+func _spawn_explosion() -> void:
+	var explosion = EXPLOSION_SCENE.instantiate()
+	explosion.global_position = global_position
+	get_tree().current_scene.add_child(explosion)
